@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio of Ummay Saima</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/4aa05a145e.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+            playfair: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            cream:    '#f6f3ec',
+            hero:     '#dfe9e2',
+            teal:     '#215B63',
+            rose:     '#d9a3a3',
+            brown:    '#854836',
+            navy:     '#464159',
+            steel:    '#355872',
+            darkbrown:'#4B2E2B',
+            pinkfoot: '#FFB2B2',
+            mintbg:   '#c0e1d2',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; }
+    .playfair { font-family: 'Playfair Display', serif; }
+    .tagline-line { font-family: 'Playfair Display', serif; font-style: italic; }
+
+    /* Timeline vertical line */
+    .timeline { position: relative; padding-left: 60px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px; top: 0; bottom: 0;
+      width: 2px;
+      background: #dfe9e2;
+    }
+    .timeline-item { position: relative; margin-bottom: 32px; }
+    .timeline-icon {
+      position: absolute;
+      left: -48px; top: 24px;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #215B63;
+      display: flex; align-items: center; justify-content: center;
+      color: #215B63; font-size: 0.9rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    /* Skill tags */
+    .skill-tag {
+      background: #f4f4f5;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #4b5563;
+    }
+
+    /* Hover lift */
+    .lift:hover { transform: translateY(-4px); transition: transform .25s; }
+    .btn-lift:hover { transform: translateY(-3px); transition: transform .3s; }
+
+    @media (max-width: 992px) {
+      .hero-grid { grid-template-columns: 1fr !important; text-align: center; }
+      .tagline { text-align: center; }
+    }
+  </style>
+</head>
+<body class="bg-cream text-gray-800 leading-relaxed">
+
+<!-- ===========================
+     HEADER / NAVBAR
+=========================== -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+  <div class="max-w-[1180px] mx-auto px-4">
+    <nav class="flex justify-between items-center py-3">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <div class="w-[42px] h-[42px] rounded-full bg-rose flex items-center justify-center text-white font-bold text-base">U</div>
+        <div class="flex flex-col leading-none">
+          <span class="text-[0.95rem] font-bold tracking-wide">UMMAY</span>
+          <span class="text-[0.95rem] font-bold tracking-wide">SAIMA</span>
+        </div>
+      </div>
+      <!-- Nav links -->
+      <ul class="hidden md:flex gap-6 list-none">
+        <li><a href="#home"    class="text-[0.95rem] font-medium text-slate-500 hover:text-rose transition-colors">Home</a></li>
+        <li><a href="#about"   class="text-[0.95rem] font-medium text-slate-500 hover:text-rose transition-colors">About</a></li>
+        <li><a href="#project" class="text-[0.95rem] font-medium text-slate-500 hover:text-rose transition-colors">Project</a></li>
+        <li><a href="#skill"   class="text-[0.95rem] font-medium text-slate-500 hover:text-rose transition-colors">Skill</a></li>
+        <li><a href="#contact" class="text-[0.95rem] font-medium text-slate-500 hover:text-rose transition-colors">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ===========================
+     HERO
+=========================== -->
+<section id="home" class="bg-hero min-h-screen flex items-center">
+  <div class="max-w-[1180px] mx-auto px-4 w-full">
+
+    <!-- 3-column grid -->
+    <div class="hero-grid grid gap-11 items-center" style="grid-template-columns:1fr 380px 1fr;">
+
+      <!-- Left -->
+      <div class="hero-left">
+        <small class="block text-[0.85rem] tracking-[2px] text-gray-500 mb-3">WELCOME TO MY WORLD</small>
+        <h1 class="playfair text-[4rem] leading-[1.1] text-navy mb-0">
+          Hi, I'm <span class="text-[#16476A] whitespace-nowrap">Ummay Saima</span>
+        </h1>
+        <p class="text-gray-500 text-base mt-4 mb-6 max-w-[520px]">
+          I design and build modern, responsive websites with clean UI and smooth user experience.
+        </p>
+      </div>
+
+      <!-- Center Image -->
+      <div class="flex justify-center">
+        <img src="image.png" alt="Ummay Saima"
+             class="w-full max-w-[360px] rounded-[22px] border border-white shadow-[0_20px_45px_rgba(0,0,0,0.12)] object-cover">
+      </div>
+
+      <!-- Right Tagline -->
+      <div class="tagline flex flex-col gap-2 text-left">
+        <span class="tagline-line font-bold leading-[1.15] text-steel whitespace-nowrap" style="font-size:clamp(1.8rem,2.8vw,3.5rem)">Code clean.</span>
+        <span class="tagline-line font-bold leading-[1.15] text-steel whitespace-nowrap" style="font-size:clamp(1.8rem,2.8vw,3.5rem)">Design bold.</span>
+        <span class="tagline-line font-bold leading-[1.15] text-steel whitespace-nowrap" style="font-size:clamp(1.8rem,2.8vw,3.5rem)">Launch strong.</span>
+      </div>
+
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex flex-wrap justify-center items-center gap-4 mt-7">
+      <a href="#about"   class="btn-lift min-w-[150px] px-6 py-3 rounded-full text-[0.95rem] font-semibold bg-teal text-[#f7f8f9] shadow-md flex items-center justify-center">About Me</a>
+      <a href="#project" class="btn-lift min-w-[150px] px-6 py-3 rounded-full text-[0.95rem] font-semibold bg-teal text-white shadow-md flex items-center justify-center">Projects</a>
+      <a href="#contact" class="btn-lift min-w-[150px] px-6 py-3 rounded-full text-[0.95rem] font-semibold bg-teal text-white shadow-md flex items-center justify-center">Contact</a>
+      <a href="cv.pdf" download class="btn-lift min-w-[150px] px-6 py-3 rounded-full text-[0.95rem] font-semibold bg-teal text-[#e9ebed] shadow-md flex items-center justify-center">Download CV</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===========================
+     ABOUT
+=========================== -->
+<section id="about" class="py-[45px] scroll-mt-[90px]">
+  <div class="max-w-[1180px] mx-auto px-4">
+    <h2 class="playfair text-[2.4rem] text-center mb-[45px] text-brown">About <span class="text-[#4F4A45]">Me</span></h2>
+    <div class="grid md:grid-cols-2 gap-7">
+
+      <!-- Bio card -->
+      <div class="bg-white rounded-[18px] p-7 shadow-[0_12px_28px_rgba(0,0,0,0.06)]">
+        <h3 class="playfair text-[2rem] italic text-darkbrown mb-4">Turning Ideas Into Digital Reality</h3>
+        <p class="text-gray-500">
+          I am a passionate Web Developer dedicated to crafting modern, high-performing, and visually engaging websites that deliver real impact. I specialize in building responsive interfaces, seamless user experiences, and clean, scalable solutions that blend creativity with functionality. Somewhere between writing code and debugging, I've learned that computers always wait for the worst moment to become dramatic. I enjoy transforming ideas into polished digital products and solving challenges through smart design, efficient code, and attention to detail.
+        </p>
+      </div>
+
+      <!-- Experience & Education card -->
+      <div class="bg-white rounded-[18px] p-7 shadow-[0_12px_28px_rgba(0,0,0,0.06)]">
+        <h2 class="playfair text-[2.4rem] text-center mb-2 text-brown"><span class="text-[#4F4A45]">Experience &amp; Education</span></h2>
+        <p class="text-center text-gray-500 text-[0.95rem] mb-8">My journey in Web Development.</p>
+
+        <div class="timeline max-w-[820px] mx-auto">
+
+          <!-- Experience -->
+          <div class="timeline-item">
+            <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+            <div class="bg-white rounded-[18px] px-7 py-6 shadow-[0_10px_24px_rgba(0,0,0,0.06)] lift transition-transform">
+              <div class="flex flex-wrap items-center gap-3 mb-1">
+                <h3 class="text-[1.05rem] text-gray-800 font-semibold">Junior Web Developer</h3>
+                <span class="bg-hero text-teal text-[0.8rem] font-semibold px-3 py-1 rounded-full">– Present</span>
+              </div>
+              <p class="text-teal font-semibold text-[0.9rem] mb-2">AcadexLab</p>
+              <p class="text-gray-500 text-sm"><b>Where design meets logic —</b> I build modern, high-performing web applications with responsive interfaces, clean backends, and user experiences that actually feel good to use.</p>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="timeline-item">
+            <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="bg-white rounded-[18px] px-7 py-6 shadow-[0_10px_24px_rgba(0,0,0,0.06)] lift transition-transform">
+              <div class="flex flex-wrap items-center gap-3 mb-1">
+                <h3 class="text-[1.05rem] text-gray-800 font-semibold">B.Sc. in Computer Science &amp; Engineering</h3>
+                <span class="bg-hero text-teal text-[0.8rem] font-semibold px-3 py-1 rounded-full">2022 – 2026</span>
+              </div>
+              <p class="text-teal font-semibold text-[0.9rem] mb-2">IUBAT - International University of Business Agriculture and Technology</p>
+              <p class="text-gray-500 text-sm">Specializing in web technologies, algorithms, and software engineering fundamentals.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     PROJECTS
+=========================== -->
+<section id="project" class="py-[45px] scroll-mt-[90px]">
+  <div class="max-w-[1180px] mx-auto px-4">
+    <h2 class="playfair text-[2.4rem] text-center mb-[45px] text-brown">My <span class="text-[#4F4A45]">Projects</span></h2>
+
+    <div class="grid gap-6" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+
+      <!-- Project 1 -->
+      <div class="bg-white rounded-[18px] p-[18px] shadow-[0_10px_24px_rgba(0,0,0,0.06)] flex flex-col h-full">
+        <div class="grid grid-cols-1 gap-3 mb-4">
+          <div class="w-full h-[220px] rounded-xl overflow-hidden bg-slate-50">
+            <img src="ob1.png" alt="Online Bookshop homepage" class="w-full h-full object-cover">
+          </div>
+          <div class="w-full h-[220px] rounded-xl overflow-hidden bg-slate-50">
+            <img src="ob2.png" alt="Online Bookshop dashboard" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <h3 class="text-[1.1rem] font-semibold mb-2">Online Bookshop Management</h3>
+        <p class="text-gray-500 text-sm">A smart e-commerce platform for buying, selling, and reselling books. Includes inventory management, secure ordering, user accounts, seller listings, and an admin dashboard for complete bookstore operations.</p>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="bg-white rounded-[18px] p-[18px] shadow-[0_10px_24px_rgba(0,0,0,0.06)] flex flex-col h-full">
+        <div class="grid grid-cols-1 gap-3 mb-4">
+          <div class="w-full h-[220px] rounded-xl overflow-hidden bg-slate-50">
+            <img src="as2.png" alt="Antique Shop Management" class="w-full h-full object-cover">
+          </div>
+          <div class="w-full h-[220px] rounded-xl overflow-hidden bg-slate-50">
+            <img src="as1.png" alt="Antique Shop Management" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <h3 class="text-[1.1rem] font-semibold mb-2">Antique Shop Management</h3>
+        <p class="text-gray-500 text-sm">A premium management system for antique stores to manage rare items, inventory, customer orders, valuations, and auctions. Designed for efficient business operations with a modern luxury interface.</p>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="bg-white rounded-[18px] p-[18px] shadow-[0_10px_24px_rgba(0,0,0,0.06)] flex flex-col h-full">
+        <div class="grid grid-cols-1 gap-3 mb-4">
+          <div class="w-full h-[220px] rounded-xl overflow-hidden bg-slate-50">
+            <img src="aa1.png" alt="AuctionArc bidding page" class="w-full h-full object-cover">
+          </div>
+          <div class="w-full h-[220px] rounded-xl overflow-hidden bg-slate-50">
+            <img src="aa2.png" alt="AuctionArc management dashboard" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <h3 class="text-[1.1rem] font-semibold mb-2">AuctionArc - Online Bidding System</h3>
+        <p class="text-gray-500 text-sm">A modern online auction system where buyers can place bids, use auto-bidding, make secure escrow payments, and track orders. Sellers can manage listings, monitor bids, chat with buyers, and handle deliveries, while admins control approvals, disputes, and transactions through a dedicated dashboard.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     SKILLS
+=========================== -->
+<section id="skill" class="py-[45px] scroll-mt-[90px]">
+  <div class="max-w-[1180px] mx-auto px-4">
+    <div class="playfair text-[2.4rem] text-center mb-[45px] text-brown">My <span class="text-[#4F4A45]">Skills</span></div>
+
+    <div class="grid gap-6" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+
+      <div class="bg-white rounded-[18px] p-7 shadow-[0_10px_24px_rgba(0,0,0,0.05)]">
+        <h3 class="text-[1.15rem] font-semibold mb-4">Frontend</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Bootstrap 5</span>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-[18px] p-7 shadow-[0_10px_24px_rgba(0,0,0,0.05)]">
+        <h3 class="text-[1.15rem] font-semibold mb-4">Backend</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag">C#</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Express</span>
+          <span class="skill-tag">MongoDB</span>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-[18px] p-7 shadow-[0_10px_24px_rgba(0,0,0,0.05)]">
+        <h3 class="text-[1.15rem] font-semibold mb-4">Tools</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">Canva</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     CONTACT
+=========================== -->
+<section id="contact" class="py-[45px] scroll-mt-[90px]">
+  <div class="max-w-[760px] mx-auto px-4 text-center">
+    <h2 class="playfair text-[2.4rem] text-center mb-[45px] text-brown">Let's <span class="text-[#4F4A45]">Connect</span></h2>
+    <p class="text-gray-500 mb-4">Feel free to reach out if you have any questions or would like to collaborate!</p>
+    <p class="mb-4">Email: <a href="mailto:ummay1351@gmail.com" class="text-[#f47575] font-medium">ummay1351@gmail.com</a></p>
+
+    <div class="my-5">
+      <a href="mailto:ummay1351@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Ummay%20Saima,%0D%0A%0D%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%0D%0A%0D%0AName:%20%0D%0AProject/Message:%20"
+         class="btn-lift inline-flex items-center justify-center px-6 py-3 rounded-full text-[0.95rem] font-semibold bg-rose text-white shadow-md">
+        Send Mail
+      </a>
+    </div>
+
+    <div class="mt-5">
+      <a href="#" class="inline-block px-6 py-3 rounded-full font-semibold bg-mintbg text-gray-800">Get In Touch</a>
+
+      <div class="flex justify-center gap-4 mt-6">
+        <a href="#" class="w-[42px] h-[42px] rounded-full bg-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] flex items-center justify-center text-slate-500 hover:text-teal transition-colors">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="w-[42px] h-[42px] rounded-full bg-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] flex items-center justify-center text-slate-500 hover:text-teal transition-colors">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" class="w-[42px] h-[42px] rounded-full bg-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] flex items-center justify-center text-slate-500 hover:text-teal transition-colors">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     FOOTER
+=========================== -->
+<footer class="bg-pinkfoot text-gray-700 text-center py-6 text-[0.9rem] mt-5">
+  &copy; 2026 Ummay Saima Portfolio. All rights reserved.
+</footer>
+
+</body>
+</html>

@@ -76,10 +76,7 @@
     .lift:hover { transform: translateY(-4px); transition: transform .25s; }
     .btn-lift:hover { transform: translateY(-3px); transition: transform .3s; }
 
-    @media (max-width: 992px) {
-      .hero-grid { grid-template-columns: 1fr !important; text-align: center; }
-      .tagline { text-align: center; }
-    }
+    /* FIX 2 & 3: Removed the old media query that used !important and broke responsiveness */
   </style>
 </head>
 <body class="bg-cream text-gray-800 leading-relaxed">
@@ -111,21 +108,21 @@
 </header>
 
 <!-- ===========================
-     HERO
+     HERO — FIX 2 & 3: Responsive grid, no inline style, proper mobile stacking
 =========================== -->
-<section id="home" class="bg-hero min-h-screen flex items-center">
+<section id="home" class="bg-hero min-h-screen flex items-center py-12">
   <div class="max-w-[1180px] mx-auto px-4 w-full">
 
-    <!-- 3-column grid -->
-    <div class="hero-grid grid gap-11 items-center" style="grid-template-columns:1fr 380px 1fr;">
+    <!-- Responsive 3-col grid: stacks on mobile, side-by-side on large screens -->
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px_1fr] gap-8 lg:gap-11 items-center">
 
       <!-- Left -->
-      <div class="hero-left">
+      <div class="text-center lg:text-left">
         <small class="block text-[0.85rem] tracking-[2px] text-gray-500 mb-3">WELCOME TO MY WORLD</small>
-        <h1 class="playfair text-[4rem] leading-[1.1] text-navy mb-0">
-          Hi, I'm <span class="text-[#16476A] whitespace-nowrap">Ummay Saima</span>
+        <h1 class="playfair text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] text-navy mb-0">
+          Hi, I'm <span class="text-[#16476A]">Ummay Saima</span>
         </h1>
-        <p class="text-gray-500 text-base mt-4 mb-6 max-w-[520px]">
+        <p class="text-gray-500 text-base mt-4 mb-6 max-w-[520px] mx-auto lg:mx-0">
           I design and build modern, responsive websites with clean UI and smooth user experience.
         </p>
       </div>
@@ -133,24 +130,24 @@
       <!-- Center Image -->
       <div class="flex justify-center">
         <img src="image.png" alt="Ummay Saima"
-             class="w-full max-w-[360px] rounded-[22px] border border-white shadow-[0_20px_45px_rgba(0,0,0,0.12)] object-cover">
+             class="w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[360px] rounded-[22px] border border-white shadow-[0_20px_45px_rgba(0,0,0,0.12)] object-cover">
       </div>
 
       <!-- Right Tagline -->
-      <div class="tagline flex flex-col gap-2 text-left">
-        <span class="tagline-line font-bold leading-[1.15] text-steel whitespace-nowrap" style="font-size:clamp(1.8rem,2.8vw,3.5rem)">Code clean.</span>
-        <span class="tagline-line font-bold leading-[1.15] text-steel whitespace-nowrap" style="font-size:clamp(1.8rem,2.8vw,3.5rem)">Design bold.</span>
-        <span class="tagline-line font-bold leading-[1.15] text-steel whitespace-nowrap" style="font-size:clamp(1.8rem,2.8vw,3.5rem)">Launch strong.</span>
+      <div class="text-center lg:text-left">
+        <span class="block tagline-line font-bold leading-[1.15] text-steel text-3xl md:text-4xl lg:text-5xl">Code clean.</span>
+        <span class="block tagline-line font-bold leading-[1.15] text-steel text-3xl md:text-4xl lg:text-5xl">Design bold.</span>
+        <span class="block tagline-line font-bold leading-[1.15] text-steel text-3xl md:text-4xl lg:text-5xl">Launch strong.</span>
       </div>
 
     </div>
 
     <!-- Buttons -->
-    <div class="flex flex-wrap justify-center items-center gap-4 mt-7">
-      <a href="#about"   class="btn-lift min-w-[150px] px-6 py-3 rounded-full text-[0.95rem] font-semibold bg-teal text-[#f7f8f9] shadow-md flex items-center justify-center">About Me</a>
-      <a href="#project" class="btn-lift min-w-[150px] px-6 py-3 rounded-full text-[0.95rem] font-semibold bg-teal text-white shadow-md flex items-center justify-center">Projects</a>
-      <a href="#contact" class="btn-lift min-w-[150px] px-6 py-3 rounded-full text-[0.95rem] font-semibold bg-teal text-white shadow-md flex items-center justify-center">Contact</a>
-      <a href="cv.pdf" download class="btn-lift min-w-[150px] px-6 py-3 rounded-full text-[0.95rem] font-semibold bg-teal text-[#e9ebed] shadow-md flex items-center justify-center">Download CV</a>
+    <div class="flex flex-wrap justify-center items-center gap-4 mt-10">
+      <a href="#about"   class="btn-lift w-full sm:w-auto min-w-[150px] px-6 py-3 rounded-full text-[0.95rem] font-semibold bg-teal text-white shadow-md text-center">About Me</a>
+      <a href="#project" class="btn-lift w-full sm:w-auto min-w-[150px] px-6 py-3 rounded-full text-[0.95rem] font-semibold bg-teal text-white shadow-md text-center">Projects</a>
+      <a href="#contact" class="btn-lift w-full sm:w-auto min-w-[150px] px-6 py-3 rounded-full text-[0.95rem] font-semibold bg-teal text-white shadow-md text-center">Contact</a>
+      <a href="cv.pdf" download class="btn-lift w-full sm:w-auto min-w-[150px] px-6 py-3 rounded-full text-[0.95rem] font-semibold bg-teal text-white shadow-md text-center">Download CV</a>
     </div>
 
   </div>
@@ -166,15 +163,15 @@
 
       <!-- Bio card -->
       <div class="bg-white rounded-[18px] p-7 shadow-[0_12px_28px_rgba(0,0,0,0.06)]">
-        <h3 class="playfair text-[2rem]  italic text-[#FF6D1F] mb-4">Turning Ideas Into Digital Reality</h3>
+        <h3 class="playfair text-[2rem] italic text-[#FF6D1F] mb-4">Turning Ideas Into Digital Reality</h3>
         <p class="text-gray-500">
           I am a passionate Web Developer dedicated to crafting modern, high-performing, and visually engaging websites that deliver real impact. I specialize in building responsive interfaces, seamless user experiences, and clean, scalable solutions that blend creativity with functionality. Somewhere between writing code and debugging, I've learned that computers always wait for the worst moment to become dramatic. I enjoy transforming ideas into polished digital products and solving challenges through smart design, efficient code, and attention to detail.
         </p>
       </div>
 
-      <!-- Experience & Education card -->
+      <!-- Experience & Education card — FIX 1: Consistent text-brown color -->
       <div class="bg-white rounded-[18px] p-7 shadow-[0_12px_28px_rgba(0,0,0,0.06)]">
-        <h2 class="playfair text-[2.4rem] text-center mb-2 text-darkbrown"><span class="text-[#FF653F]">Experience &amp; Education</span></h2>
+        <h2 class="playfair text-[2.4rem] text-center mb-2 text-brown">Experience &amp; Education</h2>
         <p class="text-center text-gray-500 text-[0.95rem] mb-8">My journey in Web Development.</p>
 
         <div class="timeline max-w-[820px] mx-auto">
@@ -268,11 +265,11 @@
 </section>
 
 <!-- ===========================
-     SKILLS
+     SKILLS — FIX 1: Changed div to h2 with text-brown for consistency
 =========================== -->
 <section id="skill" class="py-[45px] scroll-mt-[90px]">
   <div class="max-w-[1180px] mx-auto px-4">
-    <div class="playfair text-[2.4rem] text-center mb-[45px] text-brown">My Skills</div>
+    <h2 class="playfair text-[2.4rem] text-center mb-[45px] text-brown">My Skills</h2>
 
     <div class="grid gap-6" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
 
@@ -311,7 +308,7 @@
 </section>
 
 <!-- ===========================
-     CONTACT
+     CONTACT — FIX (SOCIAL LINKS): Facebook href="#" replaced with real URL placeholder
 =========================== -->
 <section id="contact" class="py-[45px] scroll-mt-[90px]">
   <div class="max-w-[760px] mx-auto px-4 text-center">
@@ -327,16 +324,26 @@
     </div>
 
     <div class="mt-5">
-      <a href="#" class="inline-block px-6 py-3 rounded-full font-semibold bg-mintbg text-gray-800">Get In Touch</a>
+      <!-- FIX: "Get In Touch" href="#" → links to email instead of dead anchor -->
+      <a href="mailto:ummay1351@gmail.com" class="inline-block px-6 py-3 rounded-full font-semibold bg-mintbg text-gray-800">Get In Touch</a>
 
       <div class="flex justify-center gap-4 mt-6">
-        <a href="#" class="w-[42px] h-[42px] rounded-full bg-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] flex items-center justify-center text-slate-500 hover:text-teal transition-colors">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/YOUR_FACEBOOK_USERNAME"
+           onclick="window.open('https://www.facebook.com/YOUR_FACEBOOK_USERNAME','_blank');return false;"
+           class="w-[42px] h-[42px] rounded-full bg-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] flex items-center justify-center text-slate-500 hover:text-teal transition-colors cursor-pointer">
           <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="#" class="w-[42px] h-[42px] rounded-full bg-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] flex items-center justify-center text-slate-500 hover:text-teal transition-colors">
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/ummay-saima-b8b78b216/"
+           onclick="window.open('https://www.linkedin.com/in/ummay-saima-b8b78b216/','_blank');return false;"
+           class="w-[42px] h-[42px] rounded-full bg-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] flex items-center justify-center text-slate-500 hover:text-teal transition-colors cursor-pointer">
           <i class="fab fa-linkedin-in"></i>
         </a>
-        <a href="#" class="w-[42px] h-[42px] rounded-full bg-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] flex items-center justify-center text-slate-500 hover:text-teal transition-colors">
+        <!-- GitHub -->
+        <a href="https://github.com/Saima535"
+           onclick="window.open('https://github.com/Saima535','_blank');return false;"
+           class="w-[42px] h-[42px] rounded-full bg-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] flex items-center justify-center text-slate-500 hover:text-teal transition-colors cursor-pointer">
           <i class="fab fa-github"></i>
         </a>
       </div>
